@@ -1,0 +1,251 @@
+.service {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 40px 15px 66px;
+}
+
+.service__title {
+  text-align: center;
+  margin: 0 0 40px;
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 500;
+}
+
+.service__devices-list {
+  @include reset-list;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.service__advantages {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.service__device {
+  width: 100%;
+  max-width: 555px;
+  background-color: $light-grey;
+  margin-bottom: 41px;
+  padding: 100px 0;
+  background-repeat: no-repeat;
+
+  &--camera {
+    padding-left: 329px;
+    background-image: url("../img/backgrounds/camera@1x.png");
+    background-size: 221px 164px;
+    background-position: top 66px left 16.61%;
+  }
+
+  &--lens {
+    padding-left: 342px;
+    background-image: url("../img/backgrounds/lens@1x.png");
+    background-size: 142px 164px;
+    background-position: top 73px left 22.66%;
+  }
+}
+
+.service__item:not(:last-child) {
+  margin-right: 29px;
+}
+
+.service__name {
+  font-size: 27px;
+  line-height: 27px;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.service__link {
+  color: $dark-grey;
+  font-weight: 500;
+  font-size: 15px;
+  width: 142px;
+  display: inline-block;
+  vertical-align: top;
+  background-color: $white;
+  padding: 12px 44px 11px 24px;
+  position: relative;
+}
+
+.service__link span {
+  position: relative;
+}
+
+.service__link::after,
+.service__link::before,
+.service__link span::after,
+.service__link span::before {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 1px;
+  background-color: $dark-grey;
+}
+
+.service__link::after {
+  transform: rotate(45deg);
+  top: 22px;
+  right: 32px;
+}
+
+.service__link::before {
+  transform: rotate(-45deg);
+  top: 26px;
+  right: 32px;
+}
+
+.service__link span::after {
+  transform: rotate(45deg);
+  top: 8px;
+  right: -27px;
+}
+
+.service__link span::before {
+  transform: rotate(-45deg);
+  top: 12px;
+  right: -27px;
+}
+
+.service__link:hover {
+  color: $red;
+  box-shadow: 0 0 15px 0 rgba(16, 17, 17, 0.4);
+}
+
+.service__link:hover::after,
+.service__link:hover::before,
+.service__link:hover span::after,
+.service__link:hover span::before {
+  background-color: $red;
+}
+
+.service__link:active {
+  opacity: 0.7;
+}
+
+.service__item {
+  width: 100%;
+  max-width: 263px;
+  background-color: $light-grey;
+  padding-top: 142px;
+  min-height: 264px;
+  height: 100%;
+  margin-bottom: 36px;
+  background-repeat: no-repeat;
+  background-position: right 50% top 46px;
+
+  &--delivery {
+    background-image: url("../img/backgrounds/timer@1x.png");
+    background-size: 57px 67px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/backgrounds/timer@2x.png");
+    }
+  }
+
+  &--guarantee {
+    background-image: url("../img/backgrounds/calendar@1x.png");
+    background-size: 59px 63px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/backgrounds/calendar@2x.png");
+    }
+
+    .service__text {
+      padding: 0 27px;
+    }
+  }
+
+  &--nearby {
+    background-image: url("../img/backgrounds/point@1x.png");
+    background-size: 45px 64px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/backgrounds/point@2x.png");
+    }
+
+    .service__text {
+      padding: 0 15px;
+    }
+  }
+
+  &--courier {
+    background-image: url("../img/backgrounds/courier@1x.png");
+    background-size: 46px 62px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/backgrounds/courier@2x.png");
+    }
+
+    .service__text {
+      padding: 0 20px;
+    }
+  }
+}
+
+.service__advantage-name {
+  color: $red;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+.service__text {
+  font-family: "Helvetica", "Arial", sans-serif;
+  line-height: 23px;
+  text-align: center;
+}
+
+.service__repairing {
+  width: 100%;
+  background-color: $black;
+  padding: 74px 0 62px 4.6%;
+  background-repeat: no-repeat;
+  background-image: url("../img/backgrounds/card@1x.png"), url("../img/backgrounds/ellipse@1x.png");
+  background-position: right 60px bottom -69px, right 51px bottom 0;
+  background-size: 362px 368px, 392px 239px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/backgrounds/card@2x.png"), url("../img/backgrounds/ellipse@2x.png");
+  }
+}
+
+.service__guarantee-title {
+  text-transform: uppercase;
+  color: $red;
+  font-weight: 500;
+  font-size: 39px;
+  line-height: 39px;
+  margin: 0 0 19px;
+}
+
+.service__guarantee-title span {
+  color: $white;
+}
+
+.service__repair-details {
+  color: $white;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 23px;
+}
+
+.service__description {
+  line-height: 23px;
+  color: $white;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  margin: 0;
+}
+
+.service__guarantee-card {
+  max-width: 603px;
+  width: 100%;
+  padding-right: 15px;
+}

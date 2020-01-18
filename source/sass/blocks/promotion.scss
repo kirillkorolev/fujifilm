@@ -1,0 +1,186 @@
+.promotion {
+  background-color: $black;
+  background-repeat: no-repeat;
+
+  padding: 218px 0 137px;
+  background-image: url("../img/backgrounds/promotion-bg-desktop@1x.png");
+  background-size: auto;
+
+  background-position: left 49% bottom 0;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/backgrounds/promotion-bg-desktop@2x.png");
+    background-size: 100% 531px;
+  }
+}
+
+.promotion__title {
+  font-size: 48px;
+  line-height: 48px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: $white;
+  margin-top: 0;
+  margin-bottom: 21px;
+}
+
+.promotion__title span {
+  color: $red;
+}
+
+.promotion__terms {
+  font-size: 24px;
+  color: $white;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.promotion__terms span {
+  border-bottom: 1px solid $white;
+}
+
+.promotion__store {
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: $white;
+  margin-bottom: 48px;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.promotion__container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.promotion__slogan {
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: $white;
+  margin-bottom: 26px;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.promotion__button {
+  width: 203px;
+  display: inline-block;
+  vertical-align: top;
+  background-color: $white;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 15px 45px 13px 24px;
+  position: relative;
+  border: none;
+  color: $dark-grey;
+  cursor: pointer;
+}
+
+.promotion__button span {
+  position: relative;
+}
+
+.promotion__button::after,
+.promotion__button::before,
+.promotion__button span::after,
+.promotion__button span::before {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 1px;
+  background-color: $dark-grey;
+
+  right: 51px;
+}
+
+.promotion__button::after {
+  transform: rotate(45deg);
+  top: 22px;
+  right: 32px;
+}
+
+.promotion__button::before {
+  transform: rotate(-45deg);
+  top: 26px;
+  right: 32px;
+}
+
+.promotion__button span::after {
+  transform: rotate(45deg);
+  top: 8px;
+  right: -34px;
+}
+
+.promotion__button span::before {
+  transform: rotate(-45deg);
+  top: 12px;
+  right: -34px;
+}
+
+.promotion__input {
+  width: 201px;
+  border: 1px solid $border-grey;
+  background-color: $black;
+  color: $white;
+  padding: 14px 46px 14px 43px;
+  font-size: 14px;
+}
+
+.promotion__form-item::before {
+  position: absolute;
+  content: "";
+  width: 23px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-image: url("../img/icons/icon-red-phone.svg");
+  top: 14px;
+  left: 14px;
+  background-size: 23px 20px;
+}
+
+.promotion__input:hover {
+  border-color: $white;
+}
+
+.promotion__button:hover {
+  color: $red;
+}
+
+.promotion__input:invalid:not(:placeholder-shown) {
+  border-color: $red;
+}
+
+.promotion__input:valid:not(:placeholder-shown) {
+  border-color: $green;
+}
+
+.promotion__button:hover span::before,
+.promotion__button:hover span::after,
+.promotion__button:hover::before,
+.promotion__button:hover::after {
+  background-color: $red;
+}
+
+.promotion__button:active {
+  background-color: $light-grey;
+}
+
+.promotion__input::placeholder {
+  color: $white;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.promotion__form-wrapper {
+  display: flex;
+}
+
+.promotion__form-item {
+  margin-right: 15px;
+  font-weight: 300;
+  position: relative;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preload" href="css/style.min.css" as="style">
+  <link rel="preload" href="fonts/oswald-regular.woff2" as="font">
+  <link rel="preload" href="fonts/oswald-regular.woff" as="font">
+  <link rel="preload" href="fonts/oswald-light.woff2" as="font">
+  <link rel="preload" href="fonts/oswald-light.woff" as="font">
+  <link rel="preload" href="fonts/oswald-medium.woff2" as="font">
+  <link rel="preload" href="fonts/oswald-medium.woff" as="font">
+  <link rel="preload" href="fonts/helvetica-neue-cyr-roman.woff2" as="font">
+  <link rel="preload" href="fonts/helvetica-neue-cyr-roman.woff" as="font">
+  <link rel="preload" href="fonts/helvetica-neue-cyr-light-italic.woff2" as="font">
+  <link rel="preload" href="fonts/helvetica-neue-cyr-light-italic.woff" as="font">
+  <link rel="preload" href="fonts/helvetica-neue-cyr-light.woff2" as="font">
+  <link rel="preload" href="fonts/helvetica-neue-cyr-light.woff" as="font">
+  <link rel="shortcut icon" type="img/png" href="img/pictures/logo.png">
+  <title>Сервисное обслуживание Fujifilm</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <script src="./js/plugins/picturefill.min.js" async></script>
+</head>
+<body>
+  <div style="display: none">
+    <include src="build/img/sprite_auto.svg"></include>
+  </div>
+  <header class="page-header">
+    <div class="page-header__wrapper">
+      <div class="page-header__logo-wrapper">
+        <a class="page-header__logo-link">
+          <img class="page-header__logo-image" src="./img/pictures/logo.png" alt="логотип Fujifilm" width="80" height="70">
+        </a>
+        <div class="page-header__logo-text">Сервисное обслуживание Fujifilm</div>
+      </div>
+      <div class="page-header__container">
+        <nav class="main-nav">
+          <ul class="main-nav__list">
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">О нас</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Услуги</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Гарантии</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <a class="page-header__phone" href="tel:+78125061963">
+          <svg class="page-header__phone-icon" width="26" height="22">
+            <use xlink:href="#icon-phone"></use>
+          </svg>
+          <span class="page-header__number">+7 (812) 506-19-63</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <h1 class="visually-hidden">Сервисный центр Fujifilm</h1>
+    <section class="promotion">
+      <div class="promotion__container">
+        <h2 class="promotion__title">Ремонт вашего Fuj<span>i</span></h2>
+        <div class="promotion__terms">В день обращения <span>за 1,5 часа</span></div>
+        <div class="promotion__store">Благодаря собственному складу оригинальных запчастей</div>
+        <div class="promotion__slogan">Отправьте заявку через сайт и получите 20% скидку!</div>
+        <form class="promotion__form" method="post" action="https/::fujifilm.ru">
+          <div class="promotion__form-wrapper">
+            <div class="promotion__form-item">
+              <label for="promotion-phone" class="visually-hidden">Ваш номер телефона</label>
+              <input class="promotion__input" id="promotion-phone" type="tel" name="phone" placeholder="Ваш телефон" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required>
+            </div>
+            <button class="promotion__button" type="submit">Отправить заявку<span></span></button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="service">
+      <h2 class="visually-hidden">Услуги сервисного центра</h2>
+      <h3 class="service__title">Какое устройство нуждается в ремонте?</h3>
+      <ul class="service__devices-list">
+        <li class="service__device service__device--camera">
+          <div class="service__name">Фотоаппарат</div>
+          <a class="service__link" href="#">Подробнее<span></span></a>
+        </li>
+        <li class="service__device service__device--lens">
+          <div class="service__name">Объектив</div>
+          <a class="service__link" href="#">Подробнее<span></span></a>
+        </li>
+      </ul>
+      <h3 class="visually-hidden">Наши преимущества</h3>
+      <ul class="service__advantages">
+        <li class="service__item service__item--delivery">
+          <h4 class="service__advantage-name">Бесплатная диагностика</h4>
+          <div class="service__text">Всего за 15 минут мастер диагностирует неисправность</div>
+        </li>
+        <li class="service__item service__item--guarantee">
+          <h4 class="service__advantage-name">Гарантия до 12 месяцев</h4>
+          <div class="service__text">Даем гарантию до 1 года на все услуги и запчасти</div>
+        </li>
+        <li class="service__item service__item--nearby">
+          <h4 class="service__advantage-name">В 5 минутах от метро</h4>
+          <div class="service__text">Мы находимся рядом с метро Вы легко и быстро нас найдете</div>
+        </li>
+        <li class="service__item service__item--courier">
+          <h4 class="service__advantage-name">Курьер - бесплатно!</h4>
+          <div class="service__text">Курьер - бесплатно! Приедем домой, в офис, кафе и др.</div>
+        </li>
+      </ul>
+      <div class="service__repairing">
+        <div class="service__guarantee-card">
+          <h3 class="service__guarantee-title">Гарантийный <span>талон</span></h3>
+          <div class="service__repair-details">на ремонт и запчасти</div>
+          <p class="service__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+  </footer>
+  <script src="./js/script.js"></script>
+</body>
+</html>
