@@ -1,0 +1,275 @@
+.process {
+  background-color: $light-grey;
+}
+
+.process__container {
+  max-width: 975px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 39px 15px 68px;
+  position: relative;
+}
+
+.process__title {
+  margin: 0 0 40px;
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.process__button-toggles-list {
+  @include reset-list;
+
+  display: flex;
+  justify-content: space-between;
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.process__slider-list {
+  @include reset-list;
+
+  width: 750px;
+  margin: 0 auto 15px;
+  display: block;
+  position: relative;
+  height: 423px;
+}
+
+.process__slider-item {
+  opacity: 0;
+  transition: opacity 1s;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &--showing-slide {
+    opacity: 1;
+  }
+}
+
+.procces__toggle-button {
+  @include reset-button;
+
+  &--active {
+    position: relative;
+  }
+}
+
+
+.procces__toggle-button:hover,
+.procces__toggle-button:focus {
+  box-shadow: 0 0 10px 0 rgba(16, 17, 17, 0.8);
+}
+
+.procces__toggle-button--active::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: 7px solid $red;
+}
+
+.process__play-button {
+  @include reset-button;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: block;
+  background-color: rgba(236, 25, 50, 0.85);
+
+  transition-property: all;
+  transition-duration: 0.9s;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 5;
+}
+
+.process__play-button::after {
+  content: "";
+  position: absolute;
+  border: 14px solid transparent;
+  border-left: 20px solid $white;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 27px;
+}
+
+.process__play-button:hover,
+.process__play-button:focus {
+  background-color: $red;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.process__play-button:active {
+  opacity: 0.7;
+}
+
+.process__toggle-image {
+  display: block;
+}
+
+.process__button-toggle-item {
+  height: 101px;
+}
+
+.process__video {
+  width: 750px;
+  height: 423px;
+}
+
+.process__arrow-button {
+  @include reset-button;
+
+  width: 55px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 318px;
+  position: absolute;
+
+  transition-property: all;
+  transition-duration: 1.2s;
+  transform: scale(1);
+
+  &--left {
+    left: 14px;
+  }
+
+  &--right {
+    right: 14px;
+  }
+}
+
+.process__arrow-button span {
+  display: block;
+  width: 55px;
+  height: 2px;
+  background-color: $grey;
+  position: relative;
+}
+
+.process__arrow-button span::before,
+.process__arrow-button span::after {
+  position: absolute;
+  content: "";
+  background-color: $grey;
+  width: 20px;
+  height: 2px;
+}
+
+.process__arrow-button--left span::before {
+  transform: rotate(-45deg);
+  left: -1px;
+  top: -8px;
+}
+
+.process__arrow-button--left span::after {
+  transform: rotate(45deg);
+  left: -1px;
+  top: 8px;
+}
+
+.process__arrow-button--right span::before {
+  transform: rotate(45deg);
+  right: -1px;
+  top: -8px;
+}
+
+.process__arrow-button--right span::after {
+  transform: rotate(-45deg);
+  right: -1px;
+  top: 8px;
+}
+
+.process__arrow-button:hover,
+.process__arrow-button:focus {
+  transform: scale(1.2);
+}
+
+.process__arrow-button:hover span,
+.process__arrow-button:focus span {
+  background-color: $black;
+}
+
+.process__arrow-button:hover span::before,
+.process__arrow-button:focus span::before,
+.process__arrow-button:hover span::after,
+.process__arrow-button:focus span::after {
+  background-color: $black;
+}
+
+.process__arrow-button:active {
+  opacity: 0.7;
+}
+
+@media (max-width: $mobile-width) {
+  .process__wrap {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .process__slider-list {
+    width: 100%;
+    margin: 0;
+    height: 322px;
+  }
+
+  .process__slider-item {
+    height: 322px;
+  }
+
+  .process__button-toggle-item {
+    height: 69px;
+  }
+
+  .process__video {
+    width: 100%;
+    height: 322px;
+  }
+
+  .process__button-toggles-list {
+    flex-direction: column;
+    margin-right: 10px;
+    width: 150px;
+    justify-content: flex-start;
+  }
+
+  .process__button-toggle-item:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  .process__arrow-button {
+    top: auto;
+    bottom: 10px;
+
+    &--left {
+      left: 150px;
+    }
+  }
+}
+
+@media (max-width: 499px) {
+  .process__button-toggles-list {
+    display: none;
+  }
+
+  .process__arrow-button {
+    &--left {
+      left: 40px;
+    }
+
+    &--right {
+      right: 40px;
+    }
+  }
+}

@@ -51,3 +51,12 @@
 
   src: url("../fonts/helvetica-neue-cyr-light.woff2") format("woff2"), url("../fonts/helvetica-neue-cyr-light.woff") format("woff");
 }
+
+@font-face {
+  font-family: "Helvetica";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+
+  src: url("../fonts/helvetica-neue-cyr-bold.woff2") format("woff2"), url("../fonts/helvetica-neue-cyr-bold.woff") format("woff");
+}

@@ -66,6 +66,8 @@
 }
 
 .promotion__button {
+  @include reset-button;
+
   width: 203px;
   display: inline-block;
   vertical-align: top;
@@ -74,9 +76,7 @@
   font-size: 15px;
   padding: 15px 45px 13px 24px;
   position: relative;
-  border: none;
   color: $dark-grey;
-  cursor: pointer;
 }
 
 .promotion__button span {
@@ -98,13 +98,13 @@
 
 .promotion__button::after {
   transform: rotate(45deg);
-  top: 22px;
+  top: 21px;
   right: 32px;
 }
 
 .promotion__button::before {
   transform: rotate(-45deg);
-  top: 26px;
+  top: 25px;
   right: 32px;
 }
 
@@ -127,6 +127,15 @@
   color: $white;
   padding: 14px 46px 14px 43px;
   font-size: 14px;
+  outline: none;
+
+  &--error {
+    border-color: $red;
+  }
+
+  &--bounce {
+    @include bounceAnimation;
+  }
 }
 
 .promotion__form-item::before {
@@ -141,26 +150,30 @@
   background-size: 23px 20px;
 }
 
-.promotion__input:hover {
+.promotion__input:hover,
+.promotion__input:focus {
   border-color: $white;
 }
 
-.promotion__button:hover {
-  color: $red;
-}
-
-.promotion__input:invalid:not(:placeholder-shown) {
+.promotion__input--error:focus {
   border-color: $red;
 }
 
-.promotion__input:valid:not(:placeholder-shown) {
-  border-color: $green;
+
+.promotion__button:hover,
+.promotion__button:focus {
+  color: $red;
 }
+
 
 .promotion__button:hover span::before,
 .promotion__button:hover span::after,
 .promotion__button:hover::before,
-.promotion__button:hover::after {
+.promotion__button:hover::after,
+.promotion__button:focus span::before,
+.promotion__button:focus span::after,
+.promotion__button:focus::before,
+.promotion__button:focus::after {
   background-color: $red;
 }
 
@@ -183,4 +196,46 @@
   margin-right: 15px;
   font-weight: 300;
   position: relative;
+
+  &--bounce {
+    @include bounceAnimation;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .promotion {
+    background-image: none;
+    padding: 150px 5% 50px;
+  }
+
+  .promotion__container {
+    padding: 0;
+  }
+
+  .promotion__title {
+    text-align: center;
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  .promotion__terms {
+    text-align: center;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .promotion__store,
+  .promotion__slogan {
+    text-align: center;
+  }
+
+  .promotion__form-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .promotion__form-item {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 }

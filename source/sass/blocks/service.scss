@@ -1,6 +1,6 @@
 .service {
   width: 100%;
-  max-width: 1170px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 40px 15px 66px;
 }
@@ -15,14 +15,17 @@
 
 .service__devices-list {
   @include reset-list;
+
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .service__advantages {
   @include reset-list;
+
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -30,7 +33,7 @@
   width: 100%;
   max-width: 555px;
   background-color: $light-grey;
-  margin-bottom: 41px;
+  margin: 0 15px 41px;
   padding: 100px 0;
   background-repeat: no-repeat;
 
@@ -47,10 +50,6 @@
     background-size: 142px 164px;
     background-position: top 73px left 22.66%;
   }
-}
-
-.service__item:not(:last-child) {
-  margin-right: 29px;
 }
 
 .service__name {
@@ -130,12 +129,12 @@
 
 .service__item {
   width: 100%;
-  max-width: 263px;
+  max-width: 261px;
   background-color: $light-grey;
   padding-top: 142px;
   min-height: 264px;
   height: 100%;
-  margin-bottom: 36px;
+  margin: 0 15px 36px;
   background-repeat: no-repeat;
   background-position: right 50% top 46px;
 
@@ -203,6 +202,8 @@
 }
 
 .service__repairing {
+  max-width: 1140px;
+  margin: 0 auto;
   width: 100%;
   background-color: $black;
   padding: 74px 0 62px 4.6%;
@@ -248,4 +249,179 @@
   max-width: 603px;
   width: 100%;
   padding-right: 15px;
+}
+
+.service__arrow-button {
+  display: none;
+}
+
+@media (max-width: $mobile-width) {
+  .service {
+    padding: 40px 5% 66px;
+  }
+
+  .service__device {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 200px 0 30px;
+    margin-bottom: 30px;
+
+    background-position: top 20px left 50%;
+  }
+
+  .service__title {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 30px;
+  }
+
+  .service__repairing {
+    max-width: none;
+
+    background-position: right 50% bottom -69px, right 50% bottom 0;
+    padding: 30px 15px 300px;
+  }
+
+  .service__guarantee-card {
+    max-width: none;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service__description {
+    text-align: center;
+  }
+
+  .service__advantages {
+    width: 261px;
+    height: 264px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .service__item {
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 1s;
+
+    &--showing-slide {
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+
+  .service__button-wrap {
+    width: 200px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .service__arrow-button {
+    @include reset-button;
+
+    width: 40px;
+    height: 30px;
+    background-color: $light-grey;
+    border-radius: 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    box-shadow: 0 3px 0 0 $dark-charcoal;
+    top: 0;
+    transition-property: all;
+    transition-duration: 0.5s;
+  }
+
+  .service__arrow-button:hover,
+  .service__arrow-button:focus {
+    top: 2px;
+    box-shadow: 0 1px 0 0 $dark-charcoal;
+  }
+
+  .service__arrow-button:active {
+    opacity: 0.7;
+  }
+
+  .service__arrow-button::before,
+  .service__arrow-button::after,
+  .service__arrow-button span::before,
+  .service__arrow-button span::after {
+    width: 10px;
+    height: 1px;
+    position: absolute;
+    content: "";
+    background-color: $dark-grey;
+  }
+
+  .service__arrow-button--previous::before {
+    left: 10px;
+    bottom: 10px;
+    transform: rotate(45deg);
+  }
+
+  .service__arrow-button--previous::after {
+    left: 10px;
+    top: 12px;
+    transform: rotate(-45deg);
+  }
+
+  .service__arrow-button--next::before {
+    right: 10px;
+    bottom: 10px;
+    transform: rotate(-45deg);
+  }
+
+  .service__arrow-button--next::after {
+    right: 10px;
+    top: 12px;
+    transform: rotate(45deg);
+  }
+
+  .service__arrow-button span {
+    display: block;
+    width: 20px;
+    height: 10px;
+    position: relative;
+  }
+
+  .service__arrow-button--previous span::before {
+    top: 2px;
+    right: 2px;
+    transform: rotate(-45deg);
+  }
+
+  .service__arrow-button--previous span::after {
+    bottom: 0;
+    right: 2px;
+    transform: rotate(45deg);
+  }
+
+  .service__arrow-button--next span::before {
+    top: 2px;
+    left: 2px;
+    transform: rotate(45deg);
+  }
+
+  .service__arrow-button--next span::after {
+    bottom: 0;
+    left: 2px;
+    transform: rotate(-45deg);
+  }
 }

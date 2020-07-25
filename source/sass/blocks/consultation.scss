@@ -1,0 +1,362 @@
+.consultation__title {
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 500;
+  margin: 0 0 29px;
+  text-align: center;
+  padding: 0 8%;
+}
+
+.consultation {
+  padding: 44px 15px 40px;
+  max-width: 1070px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.consultation__masters-list {
+  @include reset-list;
+
+  width: 325px;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.consultation__master-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 128px;
+  margin: 0 10.25% 4px 0;
+}
+
+.consultation__radio-label {
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 13px;
+}
+
+.consultation__radio-input:checked + .consultation__radio-label::after {
+  position: absolute;
+  content: "";
+  width: 128px;
+  height: 128px;
+  border: 3px solid $red;
+  top: 0;
+  left: 0;
+}
+
+.consultation__radio-label:hover {
+  box-shadow: 0 0 9px 7px rgba(0, 0, 0, 0.3);
+}
+
+.consultation__radio-input:focus + .consultation__radio-label {
+  box-shadow: 0 0 9px 7px rgba(0, 0, 0, 0.3);
+}
+
+.consultation__photo {
+  display: block;
+}
+
+.consultation__master-name {
+  line-height: 16px;
+  font-weight: 700;
+  font-family: "Helvetica", "Arial", sans-serif;
+  margin-bottom: 5px;
+}
+
+.consultation__post {
+  font-family: "Helvetica", "Arial", sans-serif;
+  line-height: 16px;
+  font-weight: 300;
+}
+
+.consultation__item {
+  padding: 0;
+  margin: 0;
+  border: none;
+
+  &--name {
+    margin-bottom: 16px;
+  }
+
+  &--phone {
+    margin-bottom: 16px;
+  }
+}
+
+.consultation__form-wrapper {
+  max-width: 679px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.consultation__input {
+  width: 100%;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+  padding: 13px 15px 12px;
+  outline: none;
+  background-color: $light-grey;
+  border: 1px solid transparent;
+
+  &--error {
+    border-color: $red;
+  }
+
+  &--bounce {
+    @include bounceAnimation;
+  }
+}
+
+.consultation__textarea {
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+  padding: 13px 15px 11px;
+  outline: none;
+  background-color: $light-grey;
+  border: 1px solid transparent;
+  border-top: 2px solid $red;
+
+  resize: none;
+  margin-bottom: 17px;
+
+  &--error {
+    border-color: $red;
+  }
+
+  &--bounce {
+    @include bounceAnimation;
+  }
+}
+
+.consultation__input::placeholder,
+.consultation__textarea::placeholder {
+  font-weight: 300;
+  font-style: italic;
+  color: $dark-grey;
+}
+
+.consultation__input:hover {
+  border-color: $grey;
+}
+
+.consultation__textarea:hover {
+  border-left-color: $grey;
+  border-right-color: $grey;
+  border-bottom-color: $grey;
+}
+
+.consultation__textarea--error:hover,
+.consultation__textarea--error:focus {
+  border-left-color: $red;
+  border-right-color: $red;
+  border-bottom-color: $red;
+  border-top-color: $dark-grey;
+}
+
+.consultation__input:focus {
+  box-shadow: 0 0 9px 7px rgba(0, 0, 0, 0.1);
+}
+
+.consultation__input--error:hover,
+.consultation__input--error:focus {
+  border-color: $red;
+}
+
+.consultation__textarea:focus {
+  box-shadow: 0 0 9px 7px rgba(0, 0, 0, 0.1);
+}
+
+.consultation__confirmation {
+  width: 225px;
+  background-color: $light-grey;
+  padding: 14px 10px;
+  margin: 0 5px 10px 0;
+}
+
+.consultation__checkbox-label {
+  padding-left: 30px;
+  position: relative;
+  color: $border-grey;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.consultation__checkbox-label::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: -2px;
+  width: 22px;
+  height: 22px;
+  background-color: $white;
+  border: 1px solid $very-dark-grey;
+  border-radius: 1px;
+}
+
+.consultation__checkbox-label:hover::before {
+  border-color: $black;
+}
+
+.consultation__checkbox-input:checked + .consultation__checkbox-label::after {
+  position: absolute;
+  content: "";
+  background-image: url("../img/icons/icon-check.svg");
+  background-repeat: no-repeat;
+  width: 23px;
+  height: 23px;
+  background-size: 23px 23px;
+  left: 0;
+  top: -4px;
+}
+
+.consultation__checkbox-input:focus + .consultation__checkbox-label::before {
+  border-color: $black;
+}
+
+.consultation__checkbox-input--error:focus + .consultation__checkbox-label::before {
+  border-color: $red;
+}
+
+.consultation__checkbox-input--error + .consultation__checkbox-label::before {
+  border-color: $red;
+}
+
+.consultation__checkbox-input--error + .consultation__checkbox-label:hover::before {
+  border-color: $black;
+}
+
+.consultation__checkbox-input--error:checked + .consultation__checkbox-label::before {
+  border-color: $very-dark-grey;
+}
+
+.consultation__footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.consultation__submit-button {
+  @include reset-button;
+
+  width: 202px;
+  background-color: $light-grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 16px 25px 13px 38px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.consultation__submit-button span {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  display: block;
+}
+
+.consultation__submit-button::after,
+.consultation__submit-button::before,
+.consultation__submit-button span::after,
+.consultation__submit-button span::before {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 1px;
+  background-color: $black;
+}
+
+.consultation__submit-button::after {
+  transform: rotate(45deg);
+  top: 21px;
+  right: 33px;
+}
+
+.consultation__submit-button::before {
+  transform: rotate(-45deg);
+  top: 25px;
+  right: 33px;
+}
+
+.consultation__submit-button span::after {
+  transform: rotate(45deg);
+  top: 2px;
+  right: 0;
+}
+
+.consultation__submit-button span::before {
+  transform: rotate(-45deg);
+  top: 6px;
+  right: 0;
+}
+
+.consultation__submit-button:hover,
+.consultation__submit-button:focus {
+  color: $red;
+  box-shadow: 0 0 15px 0 rgba(16, 17, 17, 0.4);
+}
+
+.consultation__submit-button:hover::after,
+.consultation__submit-button:hover::before,
+.consultation__submit-button:hover span::after,
+.consultation__submit-button:hover span::before,
+.consultation__submit-button:focus::after,
+.consultation__submit-button:focus::before,
+.consultation__submit-button:focus span::after,
+.consultation__submit-button:focus span::before {
+  background-color: $red;
+}
+
+.consultation__submit-button:active {
+  opacity: 0.7;
+}
+
+.consultation__container {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 3.6%;
+}
+
+@media (max-width: $mobile-width) {
+  .consultation__container {
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .consultation__masters-list {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .consultation__master-item {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .consultation__footer-wrap {
+    flex-direction: column;
+  }
+
+  .consultation__confirmation {
+    margin-right: 0;
+  }
+
+  .consultation__submit-button {
+    width: 225px;
+  }
+
+  .consultation {
+    padding: 40px 5%;
+  }
+}

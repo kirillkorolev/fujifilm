@@ -1,0 +1,140 @@
+@keyframes fadeInDownBig {
+  from {
+    opacity: 0;
+    transform: translate3d(-50%, -2000px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
+
+.success {
+  position: fixed;
+  border-radius: 5px;
+  box-shadow: 0 0 27px 0 rgba(0, 0, 0, 0.22);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 404px;
+  background-color: $white;
+  padding: 55px 20px 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 25;
+
+  animation-name: fadeInDownBig;
+  animation-duration: 0.8s;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.success__close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+
+  transition-property: all;
+  transform: rotate(0);
+  transition-duration: 1.2s;
+}
+
+.success__close-button::after,
+.success__close-button::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: $very-dark-grey;
+  top: 10px;
+  left: 3px;
+  transition-property: background-color;
+  transition-duration: 1.2s;
+}
+
+.success__close-button::before {
+  transform: rotate(-45deg);
+}
+
+.success__close-button::after {
+  transform: rotate(45deg);
+}
+
+.success__close-button:hover,
+.success__close-button:focus {
+  transform: rotate(180deg);
+}
+
+.success__close-button:hover::before,
+.success__close-button:focus::before,
+.success__close-button:hover::after,
+.success__close-button:focus::after {
+  background-color: $black;
+}
+
+.success__close-button:active {
+  opacity: 0.7;
+}
+
+.success__slogan {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.success__text {
+  margin: 0 0 30px;
+  font-family: "Helvetica", "Arial", sans-serif;
+  line-height: 22px;
+  text-align: center;
+}
+
+.success__ok-button {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  background-color: $black;
+  color: $white;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 11px;
+  border-radius: 2px;
+  width: 147px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.success__ok-button:hover,
+.success__ok-button:focus {
+  width: 180px;
+  background-color: $dark-charcoal;
+}
+
+.success__ok-button:active {
+  opacity: 0.7;
+}
+
+@media (max-width: $mobile-width) {
+  .success {
+    width: 100%;
+  }
+}

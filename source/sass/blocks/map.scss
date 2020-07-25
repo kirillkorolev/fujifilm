@@ -1,0 +1,29 @@
+.map {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.map__image {
+  display: block;
+  width: 100%;
+  height: 493px;
+}
+
+.map__google-map {
+  border: none;
+  width: 100%;
+  height: 493px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media (max-width: $mobile-width) {
+  .map__image {
+    height: 300px;
+  }
+
+  .map__google-map {
+    height: 300px;
+  }
+}

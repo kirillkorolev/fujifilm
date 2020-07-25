@@ -1,7 +1,7 @@
 {
-  "name": "Liga-A-start-template",
+  "name": "Kirill-Korolev-template",
   "version": "1.0.0",
-  "description": "Стартовый шаблон сборки Лиги А",
+  "description": "project",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
     "autoprefixer": "9.5.x",
@@ -21,7 +21,7 @@
     "posthtml-include": "^1.2.0",
     "stylelint": "9.10.x",
     "stylelint-config-htmlacademy": "0.1.x",
-    "eslint": "4.16.0",
+    "eslint": "7.3.0",
     "eslint-config-htmlacademy": "0.4.x"
   },
   "scripts": {

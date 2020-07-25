@@ -16,7 +16,6 @@
   padding: 19px 15px 5px;
   margin: 0 auto;
   align-items: center;
-  flex-wrap: wrap;
   height: 100%;
 }
 
@@ -31,6 +30,7 @@
   margin-right: 15px;
   margin-bottom: 15px;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .page-header__logo-link {
@@ -58,12 +58,18 @@
   margin-bottom: 19px;
 }
 
-.page-header__phone:hover .page-header__number {
+.page-header__phone:hover .page-header__number,
+.page-header__phone:focus .page-header__number {
   color: $red;
 }
 
-.page-header__phone:hover .page-header__phone-icon {
+.page-header__phone:hover .page-header__phone-icon,
+.page-header__phone:focus .page-header__phone-icon {
   color: $dark-grey;
+}
+
+.page-header__phone:active {
+  opacity: 0.7;
 }
 
 .page-header__container {
@@ -73,4 +79,132 @@
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+}
+
+.page-header__menu-button {
+  display: none;
+}
+
+@media (max-width: $mobile-width) {
+  .page-header__wrapper {
+    padding: 15px 5%;
+    position: relative;
+    border-bottom: 1px solid $dark-charcoal;
+  }
+
+  .page-header__logo-wrapper {
+    margin: 0;
+  }
+
+  .page-header__container {
+    position: absolute;
+    top: 91px;
+    left: 0;
+
+    flex-direction: column;
+    justify-content: normal;
+    align-items: center;
+
+    background-color: $white;
+    border-bottom: 1px solid $dark-charcoal;
+  }
+
+  .page-header__phone {
+    margin: 15px;
+    justify-content: center;
+  }
+
+  .page-header__logo-image {
+    width: 50px;
+  }
+
+  .page-header__logo-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .page-header__logo-link {
+    height: 43px;
+  }
+
+  .page-header__menu-button {
+    @include reset-button;
+
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page-header__menu-button span {
+    width: 30px;
+    height: 2px;
+    background-color: transparent;
+    position: relative;
+  }
+
+  .page-header__menu-button span::before,
+  .page-header__menu-button span::after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: $dark-grey;
+    left: 0;
+    top: 0;
+    transition: top 0.3s, transform 0.3s  0.3s;
+  }
+
+  .page-header__menu-button span::before {
+    transform: rotate(-45deg);
+  }
+
+  .page-header__menu-button span::after {
+    transform: rotate(45deg);
+  }
+
+  .page-header__menu-button:hover span::before,
+  .page-header__menu-button:focus span::before,
+  .page-header__menu-button:hover span::after,
+  .page-header__menu-button:focus span::after {
+    background-color: $red;
+  }
+
+  .page-header__menu-button:active {
+    opacity: 0.5;
+  }
+
+  .page-header {
+    &--menu-closed {
+      .page-header__container {
+        display: none;
+      }
+
+      .page-header__menu-button span {
+        background-color: $dark-grey;
+      }
+
+      .page-header__menu-button span::before {
+        top: 10px;
+      }
+
+      .page-header__menu-button span::after {
+        top: -10px;
+      }
+
+      .page-header__menu-button span::before,
+      .page-header__menu-button span::after {
+        transform: none;
+        transform-origin: 50% 50%;
+        transition: top 0.3s 0.3s, transform 0.3s;
+      }
+
+
+      .page-header__menu-button:hover span,
+      .page-header__menu-button:focus span {
+        background-color: $red;
+      }
+    }
+  }
 }
